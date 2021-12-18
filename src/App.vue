@@ -1,26 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Homes>
+    <ul>
+      <li v-for="foods in food" :key="foods">{{foods}}</li>
+    </ul>
+  </Homes>
 </template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+ <script>
+ import Homes from './components/Home';
+ export default {
+   components: {Homes},
+   data() {
+     return {
+       food: ['banana','apple','Carrot']
+     }
+   }
+ }
+ </script>
+ <style scoped>
+ ul li{
+   color: green;
+ }
+ </style>
+ 
